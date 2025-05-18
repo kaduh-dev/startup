@@ -11,9 +11,9 @@ const Impact = () => {
     },
     {
       icon: <Leaf className="h-12 w-12 text-green-500" />,
-      value: "40 t",
-      label: "CO₂ evitado por mês",
-      description: "Para cada 10 cervejarias participantes"
+      value: "2.5 t",
+      label: "CO₂ evitado por tonelada",
+      description: "De resíduo reaproveitado na alimentação animal"
     },
     {
       icon: <TrendingUp className="h-12 w-12 text-amber-500" />,
