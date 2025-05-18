@@ -13,10 +13,10 @@ interface FeedFormula {
 const FEED_FORMULAS: FeedFormula[] = [
   {
     spentGrain: 40,
-    riceHusk: 15,
-    sugarcaneBagasse: 15,
-    ddg: 15,
-    soybeanHull: 15,
+    riceHusk: 5,
+    sugarcaneBagasse: 5,
+    ddg: 25,
+    soybeanHull: 25,
     proteinContent: 18.75
   }
 ];
