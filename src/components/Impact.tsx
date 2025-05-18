@@ -11,9 +11,9 @@ const Impact = () => {
     },
     {
       icon: <Leaf className="h-12 w-12 text-green-500" />,
-      value: "45.000 L",
-      label: "Água economizada por tonelada",
-      description: "Através do reaproveitamento de resíduos"
+      value: "100%",
+      label: "Alimentação Sustentável",
+      description: "Substituímos rações industriais por alternativas naturais e nutritivas"
     },
     {
       icon: <TrendingUp className="h-12 w-12 text-amber-500" />,
