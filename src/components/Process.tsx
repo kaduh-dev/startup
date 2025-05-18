@@ -4,9 +4,9 @@ import { Beer, Truck, Wheat, Milk } from 'lucide-react';
 const Process = () => {
   const steps = [
     {
-      icon: <Beer className="h-10 w-10 text-amber-600" />,
-      title: "Produção de Cerveja",
-      description: "As cervejarias produzem cerveja e geram bagaço de malte como subproduto, que normalmente é descartado."
+      icon: <Factory className="h-10 w-10 text-amber-600" />,
+      title: "Produção Agroindustrial",
+      description: "As agroindústrias processam cevada e geram resíduos como subproduto, que normalmente seriam descartados."
     },
     {
       icon: <Truck className="h-10 w-10 text-green-600" />,

@@ -156,7 +156,7 @@ const RegistrationForm = () => {
                   className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-green-500 focus:border-transparent"
                 >
                   <option value="">Selecione uma opção</option>
-                  <option value="brewery">Cervejaria</option>
+                  <option value="brewery">Agroindústria</option>
                   <option value="farmer">Pecuarista</option>
                 </select>
               </div>

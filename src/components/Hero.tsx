@@ -16,7 +16,7 @@ const Hero = () => {
             Transformando Resíduos em <span className="text-green-400">Nutrição</span>
           </h1>
           <p className="text-xl md:text-2xl text-gray-200 mb-8 leading-relaxed">
-            Conectamos cervejarias e pecuaristas para dar uma nova vida ao bagaço de malte, 
+            Conectamos agroindústrias e pecuaristas para dar uma nova vida ao resíduo de cevada, 
             transformando-o em alimento nutritivo para gado leiteiro.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
