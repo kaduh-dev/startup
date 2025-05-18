@@ -38,7 +38,7 @@ const Header = () => {
         <div className="flex justify-between items-center">
           <a href="#" className="flex items-center gap-2">
             <img 
-              src="./images/logo.png" 
+              src="/images/logo.png" 
               alt="Nutri-Ruc Logo" 
               className={`h-12 w-12 transition-opacity ${isScrolled ? 'opacity-90' : 'opacity-100'}`}
             />
