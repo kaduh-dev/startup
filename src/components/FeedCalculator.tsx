@@ -19,7 +19,7 @@ interface AnimalFeedRequirement {
 const ANIMAL_TYPES: AnimalFeedRequirement[] = [
   { type: 'cattle', dailyFeed: 15, label: 'Bovino de Corte' },
   { type: 'dairy', dailyFeed: 20, label: 'Bovino de Leite' },
-  { type: 'sheep', dailyFeed: 2, label: 'Ovino' },
+  { type: 'calf', dailyFeed: 3, label: 'Bezerro' },
   { type: 'goat', dailyFeed: 1.5, label: 'Caprino' }
 ];
 
