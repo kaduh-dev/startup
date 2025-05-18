@@ -11,9 +11,9 @@ const Impact = () => {
     },
     {
       icon: <Leaf className="h-12 w-12 text-green-500" />,
-      value: "2.5 t",
-      label: "CO₂ evitado por tonelada",
-      description: "De resíduo reaproveitado na alimentação animal"
+      value: "45.000 L",
+      label: "Água economizada por tonelada",
+      description: "Através do reaproveitamento de resíduos"
     },
     {
       icon: <TrendingUp className="h-12 w-12 text-amber-500" />,
