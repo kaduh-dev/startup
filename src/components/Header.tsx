@@ -37,7 +37,11 @@ const Header = () => {
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex justify-between items-center">
           <a href="#" className="flex items-center gap-2">
-            <Grain className="h-8 w-8 text-green-600" />
+            <img 
+              src="/images/logo.png" 
+              alt="Nutri-Ruc Logo" 
+              className={`h-12 w-12 transition-opacity ${isScrolled ? 'opacity-90' : 'opacity-100'}`}
+            />
             <span className={`font-bold text-xl ${isScrolled ? 'text-green-800' : 'text-white'}`}>
               Nutri-Ruc
             </span>
