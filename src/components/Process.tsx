@@ -1,5 +1,5 @@
 import React from 'react';
-import { Beer, Truck, Wheat, Milk } from 'lucide-react';
+import { Factory, Truck, Wheat, Milk } from 'lucide-react';
 
 const Process = () => {
   const steps = [
