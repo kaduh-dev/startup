@@ -5,27 +5,19 @@ interface FeedFormula {
   spentGrain: number;
   riceHusk: number;
   sugarcaneBagasse: number;
+  ddg: number;
+  soybeanHull: number;
   proteinContent: number;
 }
 
 const FEED_FORMULAS: FeedFormula[] = [
   {
-    spentGrain: 60,
-    riceHusk: 20,
-    sugarcaneBagasse: 20,
-    proteinContent: 22
-  },
-  {
-    spentGrain: 50,
-    riceHusk: 30,
-    sugarcaneBagasse: 20,
-    proteinContent: 18
-  },
-  {
     spentGrain: 40,
-    riceHusk: 35,
-    sugarcaneBagasse: 25,
-    proteinContent: 15
+    riceHusk: 15,
+    sugarcaneBagasse: 15,
+    ddg: 15,
+    soybeanHull: 15,
+    proteinContent: 18.75
   }
 ];
 
@@ -57,6 +49,8 @@ const FeedCalculator = () => {
       spentGrain: (monthlyTotal * formula.spentGrain) / 100,
       riceHusk: (monthlyTotal * formula.riceHusk) / 100,
       sugarcaneBagasse: (monthlyTotal * formula.sugarcaneBagasse) / 100,
+      ddg: (monthlyTotal * formula.ddg) / 100,
+      soybeanHull: (monthlyTotal * formula.soybeanHull) / 100,
       total: monthlyTotal,
       proteinContent: formula.proteinContent
     };
@@ -180,6 +174,24 @@ const FeedCalculator = () => {
                       </td>
                       <td className="px-6 py-4 text-right text-sm text-gray-700">
                         {getBestFormula().sugarcaneBagasse}%
+                      </td>
+                    </tr>
+                    <tr className="hover:bg-stone-50 transition-colors">
+                      <td className="px-6 py-4 text-sm font-medium text-gray-700">DDG</td>
+                      <td className="px-6 py-4 text-right text-sm text-gray-700">
+                        {composition.ddg.toLocaleString('pt-BR', { maximumFractionDigits: 0 })}
+                      </td>
+                      <td className="px-6 py-4 text-right text-sm text-gray-700">
+                        {getBestFormula().ddg}%
+                      </td>
+                    </tr>
+                    <tr className="hover:bg-stone-50 transition-colors">
+                      <td className="px-6 py-4 text-sm font-medium text-gray-700">Casca de Soja</td>
+                      <td className="px-6 py-4 text-right text-sm text-gray-700">
+                        {composition.soybeanHull.toLocaleString('pt-BR', { maximumFractionDigits: 0 })}
+                      </td>
+                      <td className="px-6 py-4 text-right text-sm text-gray-700">
+                        {getBestFormula().soybeanHull}%
                       </td>
                     </tr>
                     <tr className="bg-green-50 font-semibold">
