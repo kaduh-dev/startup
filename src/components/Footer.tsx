@@ -12,7 +12,8 @@ const Footer = () => {
               <span className="font-bold text-xl">Nutri-Ruc</span>
             </div>
             <p className="text-gray-400 mb-4">
-              Conectando cervejarias e pecuaristas em uma solução sustentável para o reaproveitamento do bagaço de malte.
+
+              Conectamos agroindústrias e pecuaristas para dar uma nova vida ao resíduos, transformando-o em alimento nutritivo para gado em diferentes fases de desenvolvimento.
             </p>
             <div className="flex space-x-4">
               <a href="#" className="text-gray-400 hover:text-white transition-colors">

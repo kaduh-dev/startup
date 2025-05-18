@@ -10,13 +10,13 @@ const Process = () => {
     },
     {
       icon: <Truck className="h-10 w-10 text-green-600" />,
-      title: "Logística Sustentável",
-      description: "A Nutri-Ruc coleta o bagaço de malte e o transporta para as fazendas de forma eficiente e sustentável."
+      title: "Logística",
+      description: "A Nutri-Ruc coleta os resíduos das indústrias e o transporta para as fazendas de forma eficiente e sustentável."
     },
     {
       icon: <Wheat className="h-10 w-10 text-amber-800" />,
       title: "Conversão em Ração",
-      description: "O bagaço é processado e transformado em ração altamente nutritiva para o gado leiteiro."
+      description: "Os resíduos são processado e transformado em ração altamente nutritiva para o gado em diferentes fases."
     },
     {
       icon: <Milk className="h-10 w-10 text-blue-600" />,
@@ -31,7 +31,7 @@ const Process = () => {
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Como Funciona</h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            Conectamos cervejarias e pecuaristas em um ciclo sustentável que beneficia a todos, incluindo o meio ambiente.
+            Conectamos indústrias e pecuaristas em um ciclo sustentável que beneficia a todos, incluindo o meio ambiente.
           </p>
         </div>
 
