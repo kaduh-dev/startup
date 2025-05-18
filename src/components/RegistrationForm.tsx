@@ -59,11 +59,11 @@ const RegistrationForm = () => {
   };
 
   return (
-    <section id="register" className="py-20 bg-amber-50">
+    <section id="register" className="py-12 sm:py-20 bg-amber-50">
       <div className="container mx-auto px-4 md:px-6">
         <div className="max-w-3xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Participe do Projeto</h2>
+          <div className="text-center mb-8 sm:mb-12">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-800 mb-3 sm:mb-4">Participe do Projeto</h2>
             <p className="text-lg text-gray-600">
               Seja você uma cervejaria ou um pecuarista, preencha o formulário abaixo e nossa equipe entrará em contato para iniciar essa parceria sustentável.
             </p>

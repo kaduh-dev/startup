@@ -32,7 +32,7 @@ const Benefits = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
           {/* Cervejarias */}
-          <div className="bg-amber-50 rounded-xl p-8 shadow-md">
+          <div className="bg-amber-50 rounded-xl p-4 sm:p-8 shadow-md">
             <div className="flex items-center gap-3 mb-4">
               <Factory className="h-8 w-8 text-amber-600" />
               <h3 className="text-2xl font-bold text-amber-800">Para Agroindústrias</h3>

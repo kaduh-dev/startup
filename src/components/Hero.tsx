@@ -12,10 +12,10 @@ const Hero = () => {
     >
       <div className="container mx-auto px-4 md:px-6 text-center">
         <div className="max-w-3xl mx-auto">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 sm:mb-6 leading-tight px-4">
             Transformando Resíduos em <span className="text-green-400">Nutrição</span>
           </h1>
-          <p className="text-xl md:text-2xl text-gray-200 mb-8 leading-relaxed">
+          <p className="text-lg sm:text-xl md:text-2xl text-gray-200 mb-6 sm:mb-8 leading-relaxed px-4">
             Conectamos agroindústrias e pecuaristas para dar uma nova vida aos resíduos, 
             transformando-o em alimento nutritivo para gado em diferentes fases de desenvolvimento.
           </p>
