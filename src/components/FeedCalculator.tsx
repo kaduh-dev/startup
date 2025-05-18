@@ -10,6 +10,19 @@ interface FeedFormula {
   proteinContent: number;
 }
 
+interface AnimalFeedRequirement {
+  type: string;
+  dailyFeed: number;
+  label: string;
+}
+
+const ANIMAL_TYPES: AnimalFeedRequirement[] = [
+  { type: 'cattle', dailyFeed: 15, label: 'Bovino de Corte' },
+  { type: 'dairy', dailyFeed: 20, label: 'Bovino de Leite' },
+  { type: 'sheep', dailyFeed: 2, label: 'Ovino' },
+  { type: 'goat', dailyFeed: 1.5, label: 'Caprino' }
+];
+
 const FEED_FORMULAS: FeedFormula[] = [
   {
     spentGrain: 40,
@@ -22,13 +35,18 @@ const FEED_FORMULAS: FeedFormula[] = [
 ];
 
 const FeedCalculator = () => {
-  const [cattleCount, setCattleCount] = useState<number>(0);
+  const [animalCount, setAnimalCount] = useState<number>(0);
+  const [selectedAnimal, setSelectedAnimal] = useState<string>('cattle');
   const [requiredProtein, setRequiredProtein] = useState<number>(18);
-  
-  const DAILY_FEED_PER_CATTLE = 15;
+
+  const getDailyFeed = () => {
+    const animal = ANIMAL_TYPES.find(animal => animal.type === selectedAnimal);
+    return animal ? animal.dailyFeed : 15; // Default to cattle if not found
+  };
 
   const calculateMonthlyFeed = () => {
-    const dailyTotal = cattleCount * DAILY_FEED_PER_CATTLE;
+    const dailyFeed = getDailyFeed();
+    const dailyTotal = animalCount * dailyFeed;
     const monthlyTotal = dailyTotal * 30;
     return monthlyTotal;
   };
@@ -44,7 +62,7 @@ const FeedCalculator = () => {
   const calculateComposition = () => {
     const monthlyTotal = calculateMonthlyFeed();
     const formula = getBestFormula();
-    
+
     return {
       spentGrain: (monthlyTotal * formula.spentGrain) / 100,
       riceHusk: (monthlyTotal * formula.riceHusk) / 100,
@@ -58,13 +76,13 @@ const FeedCalculator = () => {
 
   const composition = calculateComposition();
 
-  const handleCattleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleAnimalInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
     const numValue = parseInt(value);
     if (value === '') {
-      setCattleCount(0);
+      setAnimalCount(0);
     } else if (!isNaN(numValue) && numValue >= 0) {
-      setCattleCount(numValue);
+      setAnimalCount(numValue);
     }
   };
 
@@ -83,12 +101,12 @@ const FeedCalculator = () => {
               Calcule a quantidade ideal de cada componente para a sua formulação
             </p>
           </div>
-          
+
           <div className="bg-white rounded-xl p-8 shadow-lg border border-gray-100 mb-8">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="relative">
                 <label className="block text-lg font-medium text-gray-700 mb-3">
-                  Número de Cabeças de Gado
+                  Número de Animais
                 </label>
                 <div className="relative">
                   <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
@@ -97,15 +115,33 @@ const FeedCalculator = () => {
                   <input
                     type="number"
                     min="0"
-                    value={cattleCount || ''}
-                    onChange={handleCattleInputChange}
+                    value={animalCount || ''}
+                    onChange={handleAnimalInputChange}
                     placeholder="Digite a quantidade"
                     className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent text-lg transition-all"
                   />
                 </div>
                 <p className="mt-2 text-sm text-gray-500">
-                  Insira o número total de animais no rebanho
+                  Insira o número total de animais
                 </p>
+              </div>
+
+              <div>
+                <label className="block text-lg font-medium text-gray-700 mb-3">Tipo de Animal</label>
+                <div className="relative">
+                  <select
+                    value={selectedAnimal}
+                    onChange={(e) => setSelectedAnimal(e.target.value)}
+                    className="w-full pl-4 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent text-lg appearance-none transition-all"
+                  >
+                    {ANIMAL_TYPES.map((animal) => (
+                      <option key={animal.type} value={animal.type}>
+                        {animal.label}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+                <p className="mt-2 text-sm text-gray-500">Selecione o tipo de animal.</p>
               </div>
 
               <div>
@@ -133,12 +169,12 @@ const FeedCalculator = () => {
             </div>
           </div>
 
-          {cattleCount > 0 && (
+          {animalCount > 0 && (
             <div className="bg-white rounded-xl p-8 shadow-lg border border-gray-100">
               <h3 className="text-2xl font-semibold mb-6 text-center text-gray-800">
                 Composição Mensal Recomendada
               </h3>
-              
+
               <div className="overflow-hidden rounded-lg border border-gray-200">
                 <table className="w-full">
                   <thead>
@@ -209,7 +245,7 @@ const FeedCalculator = () => {
                 <h4 className="font-semibold text-green-800 mb-2">Informações da Formulação</h4>
                 <ul className="space-y-2 text-sm text-green-700">
                   <li>• Teor de proteína: {getBestFormula().proteinContent}%</li>
-                  <li>• Consumo diário por animal: {DAILY_FEED_PER_CATTLE}kg</li>
+                  <li>• Consumo diário por animal: {getDailyFeed()}kg</li>
                   <li>• Consumo mensal total: {composition.total.toLocaleString('pt-BR', { maximumFractionDigits: 0 })}kg</li>
                 </ul>
               </div>
