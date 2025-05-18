@@ -52,6 +52,10 @@ const Benefits = () => {
               </li>
               <li className="flex gap-3">
                 <span className="text-amber-700 font-bold">✓</span>
+                <span>Receba o selo ESG por contribuir com práticas sustentáveis</span>
+              </li>
+              <li className="flex gap-3">
+                <span className="text-amber-700 font-bold">✓</span>
                 <span>Possível geração de receita adicional</span>
               </li>
               <li className="flex gap-3">
@@ -87,6 +91,10 @@ const Benefits = () => {
               <li className="flex gap-3">
                 <span className="text-green-700 font-bold">✓</span>
                 <span>Diferenciação como produtor sustentável</span>
+              </li>
+              <li className="flex gap-3">
+                <span className="text-green-700 font-bold">✓</span>
+                <span>Receba o selo ESG por participar de iniciativas sustentáveis</span>
               </li>
             </ul>
           </div>
